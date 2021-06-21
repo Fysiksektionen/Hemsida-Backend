@@ -21,7 +21,7 @@ class GenericModelGetTestCase(APITestCase):
 
 class GenericModelPostAndSerializerTestCase(APITestCase):
     """Test class for post view and serializer.
-    To use, inherit from this class and specify model_class and url,
+    To use, inherit from this class and specify model_class, serializer_class and url,
     then explicitly call the wanted tests in the child class's tests
     """
     model_class = None
