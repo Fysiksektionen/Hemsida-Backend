@@ -1,0 +1,39 @@
+version: '2.4'
+
+networks:
+    backend-net:
+
+services:
+  backend: 
+    build:
+        context: ..
+        dockerfile: .devcontainer/Dockerfile.Run
+    image: fsh:backend
+    ports:
+        - 8080:8080/tcp
+    networks:
+        - backend-net
+
+  mariadb: 
+    image: linuxserver/mariadb:alpine
+    environment:
+        - MYSQL_USER=fdev
+        - MYSQL_PASSWORD=password
+        - MYSQL_ROOT_PASSWORD=password
+        - MYSQL_DATABASE=hemsidan_db
+        - TZ=Europe/Stockholm
+    expose:
+        - 3306
+    networks:
+        - backend-net
+
+# Uncomment the following rows if you want to use adminer.
+#   adminer:
+#     image: adminer:standalone
+#     ports:
+#         - 8083:8080
+#     environment:
+#         # Try also: rmsoft, flat, nette, pappu687, see https://www.adminer.org for all themes.
+#         - ADMINER_DESIGN=rmsoft
+#     networks:
+#         - backend-net

@@ -12,7 +12,6 @@ services:
     volumes:
         - ../:/app/server/
         - ./local.py:/app/server/project_settings/local.py
-    mem_limit: 3g
     ports:
         - 8080:8080/tcp
     networks:
@@ -30,7 +29,6 @@ services:
         - TZ=Europe/Stockholm
     expose:
         - 3306
-    mem_limit: 1g
     networks:
         - backend-net
 

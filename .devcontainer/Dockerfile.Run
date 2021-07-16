@@ -1,0 +1,30 @@
+FROM python:3.8-slim-buster
+
+# Install packages
+RUN apt-get update && \
+    apt-get install -y \
+    gcc libmariadbclient-dev git && \
+    apt-get clean
+
+# Make a non-root user
+RUN adduser --system --group --home /home/fdev --disabled-password --disabled-login fdev
+USER fdev
+WORKDIR /home/fdev/backend
+
+# Install packages
+COPY ./requirements.txt requirements.txt
+RUN pip3 install --user -r requirements.txt
+
+# Copy files
+COPY . .
+
+# Setup PYTHONPATH for user debian
+RUN echo 'export PYTHONPATH="$PYTHONPATH:/home/fdev/backend"' >> /home/fdev/.bashrc
+
+# Make sure fdev owns their home folder. We need to switch to root temporarily for this.
+USER root
+RUN chown -R fdev.fdev /home/fdev/
+
+# Switch user, and define start command.
+USER fdev
+CMD sh .devcontainer/start.sh
