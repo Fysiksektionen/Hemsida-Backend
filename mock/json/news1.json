@@ -1,0 +1,12 @@
+{
+    "id": 1,
+    "url": "https://f.kth.se/news/1",
+    "page_type": "news",
+    "published_at": "2020-12-24",
+    "name": "Det blir en mottagning",
+    "image": {
+        "id": 4,
+        "href": "https://source.unsplash.com/collection/2087590/"
+    },
+    "preamble": "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident."
+}
