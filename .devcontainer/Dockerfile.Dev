@@ -24,7 +24,6 @@ RUN if [ "${INSTALL_NODE}" = "true" ]; then su vscode -c "umask 0002 && . /usr/l
 
 EXPOSE 8080
 
-WORKDIR /app/server
 
 # Install packages
 RUN apt-get update && \
@@ -32,9 +31,13 @@ RUN apt-get update && \
     gcc libmariadbclient-dev git && \
     apt-get clean
 
+USER vscode
+
+WORKDIR /app/server
+
 # Install packages
 COPY ./requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
+RUN pip3 install --user -r requirements.txt
 
 COPY ./.devcontainer/start.sh /start.sh
 
