@@ -1,7 +1,9 @@
+from website.views.image import ImageSerializer
 from rest_framework import viewsets, mixins, serializers, generics
 from utils.serializers import DBObjectSerializer
 from website.models.pages import Page, PageDraft
 from website.models.content_objects import *
+from website.models.media import Image
 from website.selectors.content_objects import get_content_object_trees
 from website.views.menus import MenuItemSerializer
 from rest_framework import serializers
@@ -120,7 +122,7 @@ class FullPageSerializer(PageSerializer):
     """Serializer for rendering a Page. Shows id, detail_url and name of child/parent pages."""
 
     content_sv = serializers.SerializerMethodField()
-    content_sv = serializers.SerializerMethodField()
+    content_en = serializers.SerializerMethodField()
 
     class Meta:
         model = Page
