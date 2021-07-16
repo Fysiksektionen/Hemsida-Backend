@@ -42,6 +42,17 @@ class News(BasePage):
     author = models.CharField(verbose_name=_('created by'), max_length=255, blank=True)
     views = models.IntegerField(verbose_name=_('views'), default=0, null=False, blank=False)
 
+    
+    preamble = models.TextField(verbose_name=_('preamble'))
+    image = models.ForeignKey(
+        'website.Image',
+        verbose_name=_('image'),
+        related_name='news_image',
+        on_delete=models.SET_NULL,
+        null=True, blank=True
+    )
+
+
     def __init__(self, *args, **kwargs):
         # Set default slug if not specified
         if 'slug' not in kwargs:
