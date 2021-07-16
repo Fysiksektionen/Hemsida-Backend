@@ -1,0 +1,31 @@
+{
+    "id": 1034,
+    "url": "https://f.kth.se/nyheter",
+    "detail_url": "\/api\/pages\/1034",
+    "name": "Nyhetsfl\u00f6de",
+    "slug": "nyheter",
+    "page_type": "news_feed",
+    "parent": {
+        "id": 1,
+        "detail_url": "\/api\/pages\/1",
+        "name": "Startsidan"
+    },
+    "children": null,
+    "published": true,
+    "published_at": "2021-03-15",
+    "last_edited_at": "2021-03-15",
+    "content_sv": {
+        "id": 1035,
+        "detail_url": "\/api\/content_objects\/1035",
+        "db_type": "dict",
+        "attributes": {},
+        "items": {}
+    },
+    "content_en": {
+        "id": 1036,
+        "detail_url": "\/api\/content_objects\/1036",
+        "db_type": "dict",
+        "attributes": {},
+        "items": {}
+    }
+}

@@ -1,0 +1,145 @@
+{
+    "id": 1037,
+    "detail_url": "\/api\/pages\/1037",
+    "url": "https://f.kth.se/fcom",
+    "name": "N\u00e4mndsida - Fcom",
+    "slug": "fcom",
+    "page_type": "namnd",
+    "parent": {
+        "id": 1,
+        "detail_url": "\/api\/pages\/1",
+        "name": "Startsidan"
+    },
+    "children": null,
+    "published": true,
+    "published_at": "2021-03-15",
+    "last_edited_at": "2021-03-15",
+    "content_sv": {
+        "id": 1038,
+        "detail_url": "\/api\/content_objects\/1038",
+        "db_type": "dict",
+        "attributes": {},
+        "items": {
+            "content": {
+                "id": 1040,
+                "detail_url": "\/api\/content_objects\/1040",
+                "db_type": "list",
+                "attributes": {},
+                "items": [
+                    {
+                        "id": 1041,
+                        "detail_url": "\/api\/images\/1041",
+                        "db_type": "image",
+                        "attributes": {
+                            "alignment": "center",
+                            "block_type": "image",
+                            "width": "100%"
+                        },
+                        "image": {
+                            "id": 2
+                        }
+                    },
+                    {
+                        "id": 1042,
+                        "detail_url": "\/api\/content_objects\/1042",
+                        "db_type": "text",
+                        "attributes": {
+                            "block_type": "heading",
+                            "rich_text_editor_type": "only-headings"
+                        },
+                        "text": "<h3>Om Kommunikationsn\u00e4mnden Fcom<\/h3>"
+                    },
+                    {
+                        "id": 1043,
+                        "detail_url": "\/api\/content_objects\/1043",
+                        "db_type": "text",
+                        "attributes": {
+                            "block_type": "bodyText",
+                            "rich_text_editor_type": "body-text"
+                        },
+                        "text": "<p><span>Fysiksektionens Kommunikationsn\u00e4mnd, \u00e4ven kallad <\/span><span><strong>Fcom<\/strong><\/span><span> arbetar med att st\u00f6dja sektionen inom allt som \u00e4r kommunikationsrelaterat. V\u00e5r huvuduppgift \u00e4r att uppr\u00e4tth\u00e5lla sektionens kommunikationskanaler, och se till att dessa anv\u00e4nds p\u00e5 r\u00e4tt s\u00e4tt. Dessutom \u00e4r vi ansvariga f\u00f6r att utveckla sektionens IT-resurser, producera och publicera sektionstidningen Force, och ta fram och s\u00e4lja profilsaker. Vi hj\u00e4lper ocks\u00e5 g\u00e4rna till med diverse kommunikationsrelaterade saker, s\u00e5 som grafisk design, fotografi, och mejlutskick. H\u00f6r g\u00e4rna av dig till kommunikationsn\u00e4mnden p\u00e5 kommunikation@f.kth.se om du eller din n\u00e4mnd vill ha hj\u00e4lp med n\u00e5gonting.<\/span><\/p>"
+                    },
+                    {
+                        "id": 1044,
+                        "detail_url": "\/api\/content_objects\/1044",
+                        "db_type": "text",
+                        "attributes": {
+                            "block_type": "heading",
+                            "rich_text_editor_type": "only-headings"
+                        },
+                        "text": "<h3>Engagera dig<\/h3>"
+                    },
+                    {
+                        "id": 1045,
+                        "detail_url": "\/api\/content_objects\/1045",
+                        "db_type": "text",
+                        "attributes": {
+                            "block_type": "bodyText",
+                            "rich_text_editor_type": "body-text"
+                        },
+                        "text": "<p><span>Har du varit <\/span><span><strong>intresserad<\/strong><\/span><span> av att engagera dig i Fysiksektionen, men k\u00e4nt att tiden inte riktigt r\u00e4cker till? D\u00e5 erbjuder Fcom ett ypperligt tillf\u00e4lle att prova p\u00e5 att vara sektionsaktiv utan att binda sig vid n\u00e5got ansvar. Du beh\u00f6ver inte ha n\u00e5gra f\u00f6rkunskaper f\u00f6r att g\u00e5 med, s\u00e5 l\u00e4nge du \u00e4r intresserad av att l\u00e4ra dig! Som medlem i Fcom finns det en otrolig variation bland sakerna du kan g\u00f6ra, fr\u00e5n foto och design till skrivande och programmering. Dessutom \u00e4r du alltid v\u00e4lkommen att delta p\u00e5 n\u00e4mndens m\u00f6ten, och att vara med i n\u00e5gon av n\u00e4mndens undergrupper; Force-redaktionen och programmeringsgruppen F.dev. Fyll i detta formul\u00e4r om du vill g\u00e5 med i Fcom!<\/span><\/p>"
+                    }
+                ]
+            },
+            "title": {
+                "id": 1039,
+                "detail_url": "\/api\/content_objects\/1039",
+                "db_type": "text",
+                "attributes": {
+                    "block_type": "heading",
+                    "rich_text_editor_type": "none"
+                },
+                "text": "<p>Fcom<\/p>"
+            }
+        }
+    },
+    "content_en": {
+        "id": 1046,
+        "detail_url": "\/api\/content_objects\/1046",
+        "db_type": "dict",
+        "attributes": {},
+        "items": {
+            "content": {
+                "id": 1048,
+                "detail_url": "\/api\/content_objects\/1048",
+                "db_type": "list",
+                "attributes": {},
+                "items": [
+                    {
+                        "id": 1049,
+                        "detail_url": "\/api\/images\/1049",
+                        "db_type": "image",
+                        "attributes": {
+                            "alignment": "center",
+                            "block_type": "image",
+                            "width": "100%"
+                        },
+                        "image": {
+                            "id": 2
+                        }
+                    },
+                    {
+                        "id": 1050,
+                        "detail_url": "\/api\/content_objects\/1050",
+                        "db_type": "text",
+                        "attributes": {
+                            "block_type": "heading",
+                            "rich_text_editor_type": "only-headings"
+                        },
+                        "text": "<h3>Some heading<\/h3>"
+                    }
+                ]
+            },
+            "title": {
+                "id": 1047,
+                "detail_url": "\/api\/content_objects\/1047",
+                "db_type": "text",
+                "attributes": {
+                    "block_type": "heading",
+                    "rich_text_editor_type": "none"
+                },
+                "text": "<p>Fcom<\/p>"
+            }
+        }
+    }
+}

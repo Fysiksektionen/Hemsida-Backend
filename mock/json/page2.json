@@ -1,0 +1,31 @@
+{
+    "id": 1031,
+    "url": "https://f.kth.se/styret",
+    "detail_url": "\/api\/pages\/1031",
+    "name": "Styret",
+    "slug": "styret",
+    "page_type": "styret",
+    "parent": {
+        "id": 1,
+        "detail_url": "\/api\/pages\/1",
+        "name": "Startsidan"
+    },
+    "children": null,
+    "published": true,
+    "published_at": "2021-03-15",
+    "last_edited_at": "2021-03-15",
+    "content_sv": {
+        "id": 1032,
+        "detail_url": "\/api\/content_objects\/1032",
+        "db_type": "dict",
+        "attributes": {},
+        "items": {}
+    },
+    "content_en": {
+        "id": 1033,
+        "detail_url": "\/api\/content_objects\/1033",
+        "db_type": "dict",
+        "attributes": {},
+        "items": {}
+    }
+}

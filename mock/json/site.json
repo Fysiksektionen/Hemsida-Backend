@@ -1,0 +1,119 @@
+{
+    "root_url": "https://f.kth.se",
+    "api_root_url": "https://f.kth.se/api",
+    "root_page": {
+        "id": 1,
+        "detail_url": "\/api\/pages\/1",
+        "name": "Startsidan"
+    },
+    "banner_content_sv": {
+        "id": 1155,
+        "detail_url": "\/api\/content_objects\/1155",
+        "db_type": "dict",
+        "attributes": {},
+        "items": {
+            "name": {
+                "id": 1156,
+                "detail_url": "\/api\/content_objects\/1156",
+                "db_type": "text",
+                "attributes": {},
+                "text": "Fysiksektionen"
+            },
+            "logo": {
+                "id": 1157,
+                "detail_url": "\/api\/images\/1157",
+                "db_type": "image",
+                "attributes": {},
+                "image": {
+                    "id": 3,
+                    "detail_url": "\/api\/images\/1169",
+                    "href": "http:\/\/localhost:8080\/uploads\/mock\/Fysiksektionen_logo.svg"
+                }
+            }
+        }
+    },
+    "banner_content_en": {
+        "id": 1158,
+        "detail_url": "\/api\/content_objects\/1158",
+        "db_type": "dict",
+        "attributes": {},
+        "items": {
+            "name": {
+                "id": 1159,
+                "detail_url": "\/api\/content_objects\/1159",
+                "db_type": "text",
+                "attributes": {},
+                "text": "The Physics Chapter"
+            },
+            "logo": {
+                "id": 1160,
+                "detail_url": "\/api\/images\/1160",
+                "db_type": "image",
+                "attributes": {},
+                "image": {
+                    "id": 3,
+                    "detail_url": "\/api\/images\/1169",
+                    "href": "http:\/\/localhost:8080\/uploads\/mock\/Fysiksektionen_logo.svg"
+                }
+            }
+        }
+    },
+    "footer_content_sv": {
+        "id": 1161,
+        "detail_url": "\/api\/content_objects\/1161",
+        "db_type": "dict",
+        "attributes": {},
+        "items": {
+            "webmaster": {
+                "id": 1162,
+                "detail_url": "\/api\/content_objects\/1162",
+                "db_type": "text",
+                "attributes": {},
+                "text": "Christoffer Ejemyr"
+            },
+            "curr_year": {
+                "id": 1163,
+                "detail_url": "\/api\/content_objects\/1163",
+                "db_type": "text",
+                "attributes": {},
+                "text": "2021"
+            },
+            "address": {
+                "id": 1164,
+                "detail_url": "\/api\/content_objects\/1164",
+                "db_type": "text",
+                "attributes": {},
+                "text": "Brinellv\u00e4gen 89, 114 28 Stockholm"
+            }
+        }
+    },
+    "footer_content_en": {
+        "id": 1165,
+        "detail_url": "\/api\/content_objects\/1165",
+        "db_type": "dict",
+        "attributes": {},
+        "items": {
+            "webmaster": {
+                "id": 1166,
+                "detail_url": "\/api\/content_objects\/1166",
+                "db_type": "text",
+                "attributes": {},
+                "text": "Christoffer Ejemyr"
+            },
+            "curr_year": {
+                "id": 1167,
+                "detail_url": "\/api\/content_objects\/1167",
+                "db_type": "text",
+                "attributes": {},
+                "text": "2021"
+            },
+            "address": {
+                "id": 1168,
+                "detail_url": "\/api\/content_objects\/1168",
+                "db_type": "text",
+                "attributes": {},
+                "text": "Brinellv\u00e4gen 89, 114 28 Stockholm, Sweden"
+            }
+        }
+    }
+}

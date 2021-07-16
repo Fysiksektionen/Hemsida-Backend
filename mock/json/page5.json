@@ -1,0 +1,767 @@
+{
+    "id": 1051,
+    "detail_url": "\/api\/pages\/1051",
+    "url": "https://f.kth.se/representatives",
+    "name": "F\u00f6rtroendevalda",
+    "slug": "representatives",
+    "page_type": "representatives",
+    "parent": {
+        "id": 1,
+        "detail_url": "\/api\/pages\/1",
+        "name": "Startsidan"
+    },
+    "children": null,
+    "published": true,
+    "published_at": "",
+    "last_edited_at": "",
+    "content_sv": {
+        "id": 1052,
+        "detail_url": "\/api\/content_objects\/1052",
+        "db_type": "dict",
+        "attributes": {},
+        "items": {
+            "header": {
+                "id": 1053,
+                "detail_url": "\/api\/content_objects\/1053",
+                "db_type": "text",
+                "attributes": {},
+                "text": "F\u00f6rtroendevalda"
+            },
+            "intro_text": {
+                "id": 1054,
+                "detail_url": "\/api\/content_objects\/1054",
+                "db_type": "text",
+                "attributes": {},
+                "text": "Letar du efter n\u00e5gon speciell person att kontakta inom Fysiksektionen? D\u00e5 har du kommit r\u00e4tt! H\u00e4r nedan listar vi alla f\u00f6rtroendevalda inom Fysiksektionen med tillh\u00f6rande kontaktuppgifter.\n\nVill du f\u00e5 b\u00e4ttre koll p\u00e5 vad de olika funktion\u00e4rerna g\u00f6r och ansvarar f\u00f6r? Kolla p\u00e5 sidan om sektionens n\u00e4mnder. D\u00e4r hittar du information om de olika grupperna och vad de jobbar med."
+            },
+            "sections": {
+                "id": 1055,
+                "detail_url": "\/api\/content_objects\/1055",
+                "db_type": "list",
+                "attributes": {},
+                "items": [
+                    {
+                        "id": 1056,
+                        "detail_url": "\/api\/content_objects\/1056",
+                        "db_type": "dict",
+                        "attributes": {},
+                        "items": {
+                            "email": {
+                                "id": 1057,
+                                "detail_url": "\/api\/content_objects\/1057",
+                                "db_type": "text",
+                                "attributes": {},
+                                "text": "styrelsen@mejl"
+                            },
+                            "name": {
+                                "id": 1058,
+                                "detail_url": "\/api\/content_objects\/1058",
+                                "db_type": "text",
+                                "attributes": {},
+                                "text": "Styrelsen"
+                            },
+                            "subsections": {
+                                "id": 1059,
+                                "detail_url": "\/api\/content_objects\/1059",
+                                "db_type": "list",
+                                "attributes": {},
+                                "items": [
+                                    {
+                                        "id": 1060,
+                                        "detail_url": "\/api\/content_objects\/1060",
+                                        "db_type": "dict",
+                                        "attributes": {},
+                                        "items": {
+                                            "members": {
+                                                "id": 1061,
+                                                "detail_url": "\/api\/content_objects\/1061",
+                                                "db_type": "list",
+                                                "attributes": {},
+                                                "items": [
+                                                    {
+                                                        "id": 1062,
+                                                        "detail_url": "\/api\/content_objects\/1062",
+                                                        "db_type": "dict",
+                                                        "attributes": {},
+                                                        "items": {
+                                                            "email": {
+                                                                "id": 1065,
+                                                                "detail_url": "\/api\/content_objects\/1065",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "emailtothisperson@email"
+                                                            },
+                                                            "name": {
+                                                                "id": 1066,
+                                                                "detail_url": "\/api\/content_objects\/1066",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "Cool name"
+                                                            },
+                                                            "role": {
+                                                                "id": 1064,
+                                                                "detail_url": "\/api\/content_objects\/1064",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "Role"
+                                                            },
+                                                            "year_code": {
+                                                                "id": 1063,
+                                                                "detail_url": "\/api\/content_objects\/1063",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "F-20"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": 1067,
+                                                        "detail_url": "\/api\/content_objects\/1067",
+                                                        "db_type": "dict",
+                                                        "attributes": {},
+                                                        "items": {
+                                                            "email": {
+                                                                "id": 1070,
+                                                                "detail_url": "\/api\/content_objects\/1070",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "emailtothisperson@email"
+                                                            },
+                                                            "name": {
+                                                                "id": 1071,
+                                                                "detail_url": "\/api\/content_objects\/1071",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "Other Cool name"
+                                                            },
+                                                            "role": {
+                                                                "id": 1069,
+                                                                "detail_url": "\/api\/content_objects\/1069",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "Role2"
+                                                            },
+                                                            "year_code": {
+                                                                "id": 1068,
+                                                                "detail_url": "\/api\/content_objects\/1068",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "F-19"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "id": 1072,
+                        "detail_url": "\/api\/content_objects\/1072",
+                        "db_type": "dict",
+                        "attributes": {},
+                        "items": {
+                            "name": {
+                                "id": 1073,
+                                "detail_url": "\/api\/content_objects\/1073",
+                                "db_type": "text",
+                                "attributes": {},
+                                "text": "N\u00e4mndfunktion\u00e4rer"
+                            },
+                            "subsections": {
+                                "id": 1074,
+                                "detail_url": "\/api\/content_objects\/1074",
+                                "db_type": "list",
+                                "attributes": {},
+                                "items": [
+                                    {
+                                        "id": 1075,
+                                        "detail_url": "\/api\/content_objects\/1075",
+                                        "db_type": "dict",
+                                        "attributes": {},
+                                        "items": {
+                                            "email": {
+                                                "id": 1077,
+                                                "detail_url": "\/api\/content_objects\/1077",
+                                                "db_type": "text",
+                                                "attributes": {},
+                                                "text": "aktivitet@kth.se"
+                                            },
+                                            "members": {
+                                                "id": 1078,
+                                                "detail_url": "\/api\/content_objects\/1078",
+                                                "db_type": "list",
+                                                "attributes": {},
+                                                "items": [
+                                                    {
+                                                        "id": 1079,
+                                                        "detail_url": "\/api\/content_objects\/1079",
+                                                        "db_type": "dict",
+                                                        "attributes": {},
+                                                        "items": {
+                                                            "email": {
+                                                                "id": 1082,
+                                                                "detail_url": "\/api\/content_objects\/1082",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "emailtothisperson@email"
+                                                            },
+                                                            "name": {
+                                                                "id": 1083,
+                                                                "detail_url": "\/api\/content_objects\/1083",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "Namn1"
+                                                            },
+                                                            "role": {
+                                                                "id": 1081,
+                                                                "detail_url": "\/api\/content_objects\/1081",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "Ordf\u00f6rande"
+                                                            },
+                                                            "year_code": {
+                                                                "id": 1080,
+                                                                "detail_url": "\/api\/content_objects\/1080",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "F-17"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": 1084,
+                                                        "detail_url": "\/api\/content_objects\/1084",
+                                                        "db_type": "dict",
+                                                        "attributes": {},
+                                                        "items": {
+                                                            "email": {
+                                                                "id": 1087,
+                                                                "detail_url": "\/api\/content_objects\/1087",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "emailtothisperson@email"
+                                                            },
+                                                            "name": {
+                                                                "id": 1088,
+                                                                "detail_url": "\/api\/content_objects\/1088",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "Other Cool name"
+                                                            },
+                                                            "role": {
+                                                                "id": 1086,
+                                                                "detail_url": "\/api\/content_objects\/1086",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "Role2"
+                                                            },
+                                                            "year_code": {
+                                                                "id": 1085,
+                                                                "detail_url": "\/api\/content_objects\/1085",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "F-19"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            "name": {
+                                                "id": 1076,
+                                                "detail_url": "\/api\/content_objects\/1076",
+                                                "db_type": "text",
+                                                "attributes": {},
+                                                "text": "Aktivitetsn\u00e4mnden"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": 1089,
+                                        "detail_url": "\/api\/content_objects\/1089",
+                                        "db_type": "dict",
+                                        "attributes": {},
+                                        "items": {
+                                            "email": {
+                                                "id": 1091,
+                                                "detail_url": "\/api\/content_objects\/1091",
+                                                "db_type": "text",
+                                                "attributes": {},
+                                                "text": "fysikalen@kth.se"
+                                            },
+                                            "members": {
+                                                "id": 1092,
+                                                "detail_url": "\/api\/content_objects\/1092",
+                                                "db_type": "list",
+                                                "attributes": {},
+                                                "items": [
+                                                    {
+                                                        "id": 1093,
+                                                        "detail_url": "\/api\/content_objects\/1093",
+                                                        "db_type": "dict",
+                                                        "attributes": {},
+                                                        "items": {
+                                                            "email": {
+                                                                "id": 1096,
+                                                                "detail_url": "\/api\/content_objects\/1096",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "emailtothisperson@email"
+                                                            },
+                                                            "name": {
+                                                                "id": 1097,
+                                                                "detail_url": "\/api\/content_objects\/1097",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "Namn1"
+                                                            },
+                                                            "role": {
+                                                                "id": 1095,
+                                                                "detail_url": "\/api\/content_objects\/1095",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "Kommisare"
+                                                            },
+                                                            "year_code": {
+                                                                "id": 1094,
+                                                                "detail_url": "\/api\/content_objects\/1094",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "F-17"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": 1098,
+                                                        "detail_url": "\/api\/content_objects\/1098",
+                                                        "db_type": "dict",
+                                                        "attributes": {},
+                                                        "items": {
+                                                            "email": {
+                                                                "id": 1101,
+                                                                "detail_url": "\/api\/content_objects\/1101",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "emailtothisperson@email"
+                                                            },
+                                                            "name": {
+                                                                "id": 1102,
+                                                                "detail_url": "\/api\/content_objects\/1102",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "Other Cool name"
+                                                            },
+                                                            "role": {
+                                                                "id": 1100,
+                                                                "detail_url": "\/api\/content_objects\/1100",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "Kass\u00f6r"
+                                                            },
+                                                            "year_code": {
+                                                                "id": 1099,
+                                                                "detail_url": "\/api\/content_objects\/1099",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "F-19"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            "name": {
+                                                "id": 1090,
+                                                "detail_url": "\/api\/content_objects\/1090",
+                                                "db_type": "text",
+                                                "attributes": {},
+                                                "text": "Fysiklanes stabsledning"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "content_en": {
+        "id": 1103,
+        "detail_url": "\/api\/content_objects\/1103",
+        "db_type": "dict",
+        "attributes": {},
+        "items": {
+            "header": {
+                "id": 1104,
+                "detail_url": "\/api\/content_objects\/1104",
+                "db_type": "text",
+                "attributes": {},
+                "text": "F\u00f6rtroendevalda"
+            },
+            "intro_text": {
+                "id": 1105,
+                "detail_url": "\/api\/content_objects\/1105",
+                "db_type": "text",
+                "attributes": {},
+                "text": "Letar du efter n\u00e5gon speciell person att kontakta inom Fysiksektionen? D\u00e5 har du kommit r\u00e4tt! H\u00e4r nedan listar vi alla f\u00f6rtroendevalda inom Fysiksektionen med tillh\u00f6rande kontaktuppgifter.\n\nVill du f\u00e5 b\u00e4ttre koll p\u00e5 vad de olika funktion\u00e4rerna g\u00f6r och ansvarar f\u00f6r? Kolla p\u00e5 sidan om sektionens n\u00e4mnder. D\u00e4r hittar du information om de olika grupperna och vad de jobbar med."
+            },
+            "sections": {
+                "id": 1106,
+                "detail_url": "\/api\/content_objects\/1106",
+                "db_type": "list",
+                "attributes": {},
+                "items": [
+                    {
+                        "id": 1107,
+                        "detail_url": "\/api\/content_objects\/1107",
+                        "db_type": "dict",
+                        "attributes": {},
+                        "items": {
+                            "email": {
+                                "id": 1108,
+                                "detail_url": "\/api\/content_objects\/1108",
+                                "db_type": "text",
+                                "attributes": {},
+                                "text": "styrelsen@mejl"
+                            },
+                            "name": {
+                                "id": 1109,
+                                "detail_url": "\/api\/content_objects\/1109",
+                                "db_type": "text",
+                                "attributes": {},
+                                "text": "Styrelsen"
+                            },
+                            "subsections": {
+                                "id": 1110,
+                                "detail_url": "\/api\/content_objects\/1110",
+                                "db_type": "list",
+                                "attributes": {},
+                                "items": [
+                                    {
+                                        "id": 1111,
+                                        "detail_url": "\/api\/content_objects\/1111",
+                                        "db_type": "dict",
+                                        "attributes": {},
+                                        "items": {
+                                            "members": {
+                                                "id": 1112,
+                                                "detail_url": "\/api\/content_objects\/1112",
+                                                "db_type": "list",
+                                                "attributes": {},
+                                                "items": [
+                                                    {
+                                                        "id": 1113,
+                                                        "detail_url": "\/api\/content_objects\/1113",
+                                                        "db_type": "dict",
+                                                        "attributes": {},
+                                                        "items": {
+                                                            "email": {
+                                                                "id": 1116,
+                                                                "detail_url": "\/api\/content_objects\/1116",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "emailtothisperson@email"
+                                                            },
+                                                            "name": {
+                                                                "id": 1117,
+                                                                "detail_url": "\/api\/content_objects\/1117",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "Cool name"
+                                                            },
+                                                            "role": {
+                                                                "id": 1115,
+                                                                "detail_url": "\/api\/content_objects\/1115",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "Role"
+                                                            },
+                                                            "year_code": {
+                                                                "id": 1114,
+                                                                "detail_url": "\/api\/content_objects\/1114",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "F-20"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": 1118,
+                                                        "detail_url": "\/api\/content_objects\/1118",
+                                                        "db_type": "dict",
+                                                        "attributes": {},
+                                                        "items": {
+                                                            "email": {
+                                                                "id": 1121,
+                                                                "detail_url": "\/api\/content_objects\/1121",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "emailtothisperson@email"
+                                                            },
+                                                            "name": {
+                                                                "id": 1122,
+                                                                "detail_url": "\/api\/content_objects\/1122",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "Other Cool name"
+                                                            },
+                                                            "role": {
+                                                                "id": 1120,
+                                                                "detail_url": "\/api\/content_objects\/1120",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "Role2"
+                                                            },
+                                                            "year_code": {
+                                                                "id": 1119,
+                                                                "detail_url": "\/api\/content_objects\/1119",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "F-19"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "id": 1123,
+                        "detail_url": "\/api\/content_objects\/1123",
+                        "db_type": "dict",
+                        "attributes": {},
+                        "items": {
+                            "name": {
+                                "id": 1124,
+                                "detail_url": "\/api\/content_objects\/1124",
+                                "db_type": "text",
+                                "attributes": {},
+                                "text": "N\u00e4mndfunktion\u00e4rer"
+                            },
+                            "subsections": {
+                                "id": 1125,
+                                "detail_url": "\/api\/content_objects\/1125",
+                                "db_type": "list",
+                                "attributes": {},
+                                "items": [
+                                    {
+                                        "id": 1126,
+                                        "detail_url": "\/api\/content_objects\/1126",
+                                        "db_type": "dict",
+                                        "attributes": {},
+                                        "items": {
+                                            "email": {
+                                                "id": 1128,
+                                                "detail_url": "\/api\/content_objects\/1128",
+                                                "db_type": "text",
+                                                "attributes": {},
+                                                "text": "aktivitet@kth.se"
+                                            },
+                                            "members": {
+                                                "id": 1129,
+                                                "detail_url": "\/api\/content_objects\/1129",
+                                                "db_type": "list",
+                                                "attributes": {},
+                                                "items": [
+                                                    {
+                                                        "id": 1130,
+                                                        "detail_url": "\/api\/content_objects\/1130",
+                                                        "db_type": "dict",
+                                                        "attributes": {},
+                                                        "items": {
+                                                            "email": {
+                                                                "id": 1133,
+                                                                "detail_url": "\/api\/content_objects\/1133",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "emailtothisperson@email"
+                                                            },
+                                                            "name": {
+                                                                "id": 1134,
+                                                                "detail_url": "\/api\/content_objects\/1134",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "Namn1"
+                                                            },
+                                                            "role": {
+                                                                "id": 1132,
+                                                                "detail_url": "\/api\/content_objects\/1132",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "Ordf\u00f6rande"
+                                                            },
+                                                            "year_code": {
+                                                                "id": 1131,
+                                                                "detail_url": "\/api\/content_objects\/1131",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "F-17"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": 1135,
+                                                        "detail_url": "\/api\/content_objects\/1135",
+                                                        "db_type": "dict",
+                                                        "attributes": {},
+                                                        "items": {
+                                                            "email": {
+                                                                "id": 1138,
+                                                                "detail_url": "\/api\/content_objects\/1138",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "emailtothisperson@email"
+                                                            },
+                                                            "name": {
+                                                                "id": 1139,
+                                                                "detail_url": "\/api\/content_objects\/1139",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "Other Cool name"
+                                                            },
+                                                            "role": {
+                                                                "id": 1137,
+                                                                "detail_url": "\/api\/content_objects\/1137",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "Role2"
+                                                            },
+                                                            "year_code": {
+                                                                "id": 1136,
+                                                                "detail_url": "\/api\/content_objects\/1136",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "F-19"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            "name": {
+                                                "id": 1127,
+                                                "detail_url": "\/api\/content_objects\/1127",
+                                                "db_type": "text",
+                                                "attributes": {},
+                                                "text": "Aktivitetsn\u00e4mnden"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "id": 1140,
+                                        "detail_url": "\/api\/content_objects\/1140",
+                                        "db_type": "dict",
+                                        "attributes": {},
+                                        "items": {
+                                            "email": {
+                                                "id": 1142,
+                                                "detail_url": "\/api\/content_objects\/1142",
+                                                "db_type": "text",
+                                                "attributes": {},
+                                                "text": "fysikalen@kth.se"
+                                            },
+                                            "members": {
+                                                "id": 1143,
+                                                "detail_url": "\/api\/content_objects\/1143",
+                                                "db_type": "list",
+                                                "attributes": {},
+                                                "items": [
+                                                    {
+                                                        "id": 1144,
+                                                        "detail_url": "\/api\/content_objects\/1144",
+                                                        "db_type": "dict",
+                                                        "attributes": {},
+                                                        "items": {
+                                                            "email": {
+                                                                "id": 1147,
+                                                                "detail_url": "\/api\/content_objects\/1147",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "emailtothisperson@email"
+                                                            },
+                                                            "name": {
+                                                                "id": 1148,
+                                                                "detail_url": "\/api\/content_objects\/1148",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "Namn1"
+                                                            },
+                                                            "role": {
+                                                                "id": 1146,
+                                                                "detail_url": "\/api\/content_objects\/1146",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "Kommisare"
+                                                            },
+                                                            "year_code": {
+                                                                "id": 1145,
+                                                                "detail_url": "\/api\/content_objects\/1145",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "F-17"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": 1149,
+                                                        "detail_url": "\/api\/content_objects\/1149",
+                                                        "db_type": "dict",
+                                                        "attributes": {},
+                                                        "items": {
+                                                            "email": {
+                                                                "id": 1152,
+                                                                "detail_url": "\/api\/content_objects\/1152",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "emailtothisperson@email"
+                                                            },
+                                                            "name": {
+                                                                "id": 1153,
+                                                                "detail_url": "\/api\/content_objects\/1153",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "Other Cool name"
+                                                            },
+                                                            "role": {
+                                                                "id": 1151,
+                                                                "detail_url": "\/api\/content_objects\/1151",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "Kass\u00f6r"
+                                                            },
+                                                            "year_code": {
+                                                                "id": 1150,
+                                                                "detail_url": "\/api\/content_objects\/1150",
+                                                                "db_type": "text",
+                                                                "attributes": {},
+                                                                "text": "F-19"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            "name": {
+                                                "id": 1141,
+                                                "detail_url": "\/api\/content_objects\/1141",
+                                                "db_type": "text",
+                                                "attributes": {},
+                                                "text": "Fysiklanes stabsledning"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
