@@ -18,7 +18,7 @@ class SiteModel(SingletonModel):
     root_page = models.ForeignKey(Page, verbose_name=_('root page'), blank=False, null=False, on_delete=models.RESTRICT)
 
     # Didn't find a nice way to do this but what ever...
-    banner_content = models.ForeignKey(ContentCollection, verbose_name=_('banner content'), related_name='banner_content', blank=True, null=True, on_delete=models.RESTRICT)
-    footer_content = models.ForeignKey(ContentCollection, verbose_name=_('footer content'), related_name='footer_content', blank=True, null=True, on_delete=models.RESTRICT)
-
-
+    banner_content_sv = models.ForeignKey(ContentCollection, verbose_name=_('swedish banner content'), related_name='banner_content_sv', blank=True, null=True, on_delete=models.RESTRICT)
+    footer_content_sv = models.ForeignKey(ContentCollection, verbose_name=_('swedish footer content'), related_name='footer_content_sv', blank=True, null=True, on_delete=models.RESTRICT)
+    banner_content_en = models.ForeignKey(ContentCollection, verbose_name=_('english banner content'), related_name='banner_content_en', blank=True, null=True, on_delete=models.RESTRICT)
+    footer_content_en = models.ForeignKey(ContentCollection, verbose_name=_('english footer content'), related_name='footer_content_en', blank=True, null=True, on_delete=models.RESTRICT)

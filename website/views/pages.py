@@ -190,7 +190,7 @@ class FullPageSerializer(PageSerializer):
 
         self.instance.save()
 
-    def get_content(self, obj):
+    def get_content(self, obj): # Unused
         serialized_content = {'content_sv': None, 'content_en': None}
         content = []
         language = []
@@ -206,6 +206,8 @@ class FullPageSerializer(PageSerializer):
             serialized_content[lang] = serialized_items
         return serialized_content
 
+    # TODO: get_content only has one call to get_content_object_trees, and is hence ~2x faster than this.
+    # We could probably implement a method for both of these that only call it a single time somehow...
     def get_content_sv(self, obj):
         if obj.content_sv:
            return serialize_item(get_content_object_trees([obj.content_sv])[0], self.context)
@@ -511,7 +513,6 @@ class ContentObjectBaseSerializer(serializers.ModelSerializer):
                 if self.ser.is_valid():
                     self._validated_data = self.initial_data
                     self._errors = {}
-
                 else:
                     self._errors = self.ser.errors
             else:
