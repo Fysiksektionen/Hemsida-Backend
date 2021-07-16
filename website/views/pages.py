@@ -112,21 +112,21 @@ class PageDraftSerializer(DBObjectSerializer):
 
     class Meta:
         model = PageDraft
-        fields = ['page_type','content']
+        fields = ['page_type','content_sv','content_end']
 
 
 
 class FullPageSerializer(PageSerializer):
     """Serializer for rendering a Page. Shows id, detail_url and name of child/parent pages."""
 
-    content = serializers.SerializerMethodField()
-
+    content_sv = serializers.SerializerMethodField()
+    content_sv = serializers.SerializerMethodField()
 
     class Meta:
         model = Page
         fields = ['name', 'url', 'slug', 'page_type', 'parent', 'children', 'published',
                   'first_published_at', 'last_edited_at', 'publish_time', 'unpublish_time',
-                  'content', 'page_draft']
+                  'content_sv', 'content_en', 'page_draft']
         depth = 1
         nested_serialization = {
             'children': {
@@ -136,19 +136,18 @@ class FullPageSerializer(PageSerializer):
                 'fields': ['name']
             },
             'page_draft': {
-                'fields': ['page_type', 'content']
+                'fields': ['page_type', 'content_sv', 'content_en']
             }
         }
 
     def __init__(self,instance=None, data=empty,**kwargs):
         if data is not empty:
-            content = data.get("content",{"content_sv":{}, "content_en":{}})
-            data_sv = content.get("content_sv",{})
-            data_en = content.get("content_en",{})
+            data_sv = data.get("content_sv",{})
+            data_en = data.get("content_en",{})
             if data_sv != {}:
                 self.post_serializer_sv = ContentObjectBaseSerializer(data=data_sv)
             if data_en != {}:
-                self.post_serializer_en = ContentObjectBaseSerializer(data=content.get("content_en",{}))
+                self.post_serializer_en = ContentObjectBaseSerializer(data=data_en)
         super().__init__(instance=instance,data=data,**kwargs)
 
     def is_valid(self, raise_exception=False):
@@ -173,14 +172,14 @@ class FullPageSerializer(PageSerializer):
     def save(self ,**kwargs):
         super().save()
         if hasattr(self,"post_serializer_sv"):
-            data_sv = self.initial_data["content"]["content_sv"]
+            data_sv = self.initial_data["content_sv"]
             data_sv["containing_page"] = self.instance.id
             ser_sv = ContentObjectBaseSerializer(data=data_sv)
             ser_sv.is_valid()
             ser_sv.save()
             self.instance.content_sv = ser_sv.instance
         if hasattr(self, "post_serializer_en"):
-            data_en = self.initial_data["content"]["content_en"]
+            data_en = self.initial_data["content_en"]
             data_en["containing_page"] = self.instance.id
             ser_en = ContentObjectBaseSerializer(data=data_en)
             ser_en.is_valid()
@@ -188,8 +187,6 @@ class FullPageSerializer(PageSerializer):
             self.instance.content_en = ser_en.instance
 
         self.instance.save()
-
-
 
     def get_content(self, obj):
         serialized_content = {'content_sv': None, 'content_en': None}
@@ -206,6 +203,18 @@ class FullPageSerializer(PageSerializer):
             serialized_items = serialize_item(item, self.context)
             serialized_content[lang] = serialized_items
         return serialized_content
+
+    def get_content_sv(self, obj):
+        if obj.content_sv:
+           return serialize_item(get_content_object_trees([obj.content_sv])[0], self.context)
+        else:
+            return None
+
+    def get_content_en(self, obj):
+        if obj.content_en:
+           return serialize_item(get_content_object_trees([obj.content_en])[0], self.context)
+        else:
+            return None
 
 
 
