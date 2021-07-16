@@ -9,5 +9,5 @@ class Image(models.Model):
         verbose_name = _("image")
         verbose_name_plural = _("image")
 
-    image = models.ImageField(verbose_name=_('image'))
+    image = models.ImageField(verbose_name=_('image'), upload_to ='uploads/')
     alt = models.TextField(verbose_name=('alt'),default="")

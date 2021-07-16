@@ -70,7 +70,7 @@ class COBaseSerializer(DBObjectSerializer):
 
 class COImageSerializer(DBObjectSerializer):
     """Serializer for rendering COImage."""
-    image = serializers.ImageField()
+    image = ImageSerializer() #previously image = serializers.ImageField()
 
     class Meta:
         model = ContentImage
