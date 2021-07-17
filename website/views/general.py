@@ -4,11 +4,11 @@ from rest_framework.generics import get_object_or_404
 from utils.serializers import ErrorSerializer
 from website.models import Redirect
 from website.selectors.pages import get_page_from_path
-from website.views.pages import PageSerializer
+from website.views.pages import FullPageSerializer, PageSerializer
 
 
 class PathResolveView(generics.GenericAPIView):
-    serializer_class = PageSerializer
+    serializer_class = FullPageSerializer
 
     def get(self, request, *args, **kwargs):
         """Retrieve page of path specified as GET-parameter, else return Response with temporary redirect."""

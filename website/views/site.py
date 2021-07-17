@@ -35,14 +35,24 @@ class SiteSerializer(PageSerializer):
                 if tmp != {}:
                     self.content_serializers[field] = ContentObjectBaseSerializer(data=tmp)
 
-        # TODO: get_content_object_trees is kinda slow, and we could probablt be faster by only calling it once for all CONTENT_TREE_FIELDS.
-        for field in self.CONTENT_TREE_FIELDS:
-            setattr(self, "get_"+field,
-                lambda obj: serialize_item(get_content_object_trees([getattr(obj, field)])[0], self.context)
-                    if getattr(obj, field) else None)
+        #for field in self.CONTENT_TREE_FIELDS: #Doesn't work for some weird reason...
+        #    print(field)
+        #    setattr(self, "get_"+field, lambda obj: serialize_item(get_content_object_trees([getattr(obj, field)])[0], self.context) if getattr(obj, field) else None)
         
         super().__init__(instance=instance,data=data,**kwargs)
 
+
+        
+
+    # TODO: get_content_object_trees is kinda slow, and we could probablt be faster by only calling it once for all CONTENT_TREE_FIELDS.
+    def get_banner_content_sv(self, obj):
+        return serialize_item(get_content_object_trees([obj.banner_content_sv])[0], self.context) if obj.banner_content_sv else None
+    def get_footer_content_sv(self, obj):
+        return serialize_item(get_content_object_trees([obj.footer_content_sv])[0], self.context) if obj.banner_content_sv else None
+    def get_banner_content_en(self, obj):
+        return serialize_item(get_content_object_trees([obj.banner_content_en])[0], self.context) if obj.footer_content_en else None
+    def get_footer_content_en(self, obj):
+        return serialize_item(get_content_object_trees([obj.footer_content_en])[0], self.context) if obj.footer_content_en else None
     
     def is_valid(self, raise_exception=False):
         super().is_valid(raise_exception=raise_exception)
@@ -62,7 +72,7 @@ class SiteSerializer(PageSerializer):
             if hasattr(self,field):
                 data = self.initial_data[field]
                 # We actually don't have a containing page, but since this needs to be set, we use the frontpage.
-                # Hopefully that won't cause any problems.
+                # TODO: This does overwrite the frontpage when the site singleton is updated. Not good.
                 data["containing_page"] = 1
                 ser = ContentObjectBaseSerializer(data=data)
                 ser.is_valid()
