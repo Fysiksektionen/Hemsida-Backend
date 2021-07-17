@@ -1,5 +1,4 @@
 -- Adminer 4.8.0 MySQL 5.5.5-10.5.9-MariaDB-log dump
-START TRANSACTION;
 
 SET NAMES utf8;
 SET time_zone = '+00:00';
@@ -8,17 +7,44 @@ SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
 USE `hemsidan_db`;
 
+CREATE TABLE `website_basepage` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `url` varchar(200) NOT NULL,
+  `page_type` varchar(255) NOT NULL,
+  `published` tinyint(1) NOT NULL,
+  `first_published_at` date DEFAULT NULL,
+  `publish_time` datetime(6) DEFAULT NULL,
+  `unpublish_time` datetime(6) DEFAULT NULL,
+  `last_edited_at` datetime(6) NOT NULL,
+  `content_en_id` int(11) DEFAULT NULL,
+  `content_sv_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `url` (`url`),
+  UNIQUE KEY `content_en_id` (`content_en_id`),
+  UNIQUE KEY `content_sv_id` (`content_sv_id`),
+  CONSTRAINT `website_basepage_content_en_id_866b2b82_fk_website_c` FOREIGN KEY (`content_en_id`) REFERENCES `website_contentobjectbase` (`id`),
+  CONSTRAINT `website_basepage_content_sv_id_4797736f_fk_website_c` FOREIGN KEY (`content_sv_id`) REFERENCES `website_contentobjectbase` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 TRUNCATE `website_basepage`;
 INSERT INTO `website_basepage` (`id`, `url`, `page_type`, `published`, `first_published_at`, `publish_time`, `unpublish_time`, `last_edited_at`, `content_en_id`, `content_sv_id`) VALUES
-(1,	'https://f.kth.se',	'frontpage',	1,	NULL,	NULL,	NULL,	'2021-07-16 20:49:22.342700',	16,	1),
-(2,	'https://f.kth.se/styret',	'styret',	1,	NULL,	NULL,	NULL,	'2021-07-16 20:49:31.032677',	32,	31),
-(3,	'https://f.kth.se/nyheter',	'news_feed',	1,	NULL,	NULL,	NULL,	'2021-07-16 20:49:35.800987',	34,	33),
-(4,	'https://f.kth.se/fcom',	'namnd',	1,	NULL,	NULL,	NULL,	'2021-07-16 20:49:40.267227',	43,	35),
-(5,	'https://f.kth.se/representatives',	'representatives',	1,	NULL,	NULL,	NULL,	'2021-07-16 20:49:45.797895',	99,	48),
-(6,	'https://f.kth.se/news/1',	'news',	0,	NULL,	NULL,	NULL,	'2021-07-16 20:51:20.690205',	NULL,	NULL),
-(7,	'https://f.kth.se/news/2',	'news',	0,	NULL,	NULL,	NULL,	'2021-07-16 20:51:28.662620',	NULL,	NULL),
-(8,	'https://f.kth.se/news/3',	'news',	0,	NULL,	NULL,	NULL,	'2021-07-16 20:51:34.221778',	NULL,	NULL),
-(9,	'https://f.kth.se/news/4',	'news',	0,	NULL,	NULL,	NULL,	'2021-07-16 20:51:38.419288',	NULL,	NULL);
+(1,	'',	'',	0,	NULL,	NULL,	NULL,	'2021-07-16 20:48:12.250473',	NULL,	NULL),
+(2,	'https://f.kth.se',	'frontpage',	1,	NULL,	NULL,	NULL,	'2021-07-16 20:49:22.342700',	16,	1),
+(3,	'https://f.kth.se/styret',	'styret',	1,	NULL,	NULL,	NULL,	'2021-07-16 20:49:31.032677',	32,	31),
+(4,	'https://f.kth.se/nyheter',	'news_feed',	1,	NULL,	NULL,	NULL,	'2021-07-16 20:49:35.800987',	34,	33),
+(5,	'https://f.kth.se/fcom',	'namnd',	1,	NULL,	NULL,	NULL,	'2021-07-16 20:49:40.267227',	43,	35),
+(6,	'https://f.kth.se/representatives',	'representatives',	1,	NULL,	NULL,	NULL,	'2021-07-16 20:49:45.797895',	99,	48),
+(7,	'https://f.kth.se/news/1',	'news',	0,	NULL,	NULL,	NULL,	'2021-07-16 20:51:20.690205',	NULL,	NULL),
+(8,	'https://f.kth.se/news/2',	'news',	0,	NULL,	NULL,	NULL,	'2021-07-16 20:51:28.662620',	NULL,	NULL),
+(9,	'https://f.kth.se/news/3',	'news',	0,	NULL,	NULL,	NULL,	'2021-07-16 20:51:34.221778',	NULL,	NULL),
+(10,	'https://f.kth.se/news/4',	'news',	0,	NULL,	NULL,	NULL,	'2021-07-16 20:51:38.419288',	NULL,	NULL);
+
+CREATE TABLE `website_contentcollection` (
+  `contentobjectbase_ptr_id` int(11) NOT NULL,
+  `is_ordered` tinyint(1) NOT NULL,
+  PRIMARY KEY (`contentobjectbase_ptr_id`),
+  CONSTRAINT `website_contentcolle_contentobjectbase_pt_da58866a_fk_website_c` FOREIGN KEY (`contentobjectbase_ptr_id`) REFERENCES `website_contentobjectbase` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 TRUNCATE `website_contentcollection`;
 INSERT INTO `website_contentcollection` (`contentobjectbase_ptr_id`, `is_ordered`) VALUES
@@ -81,6 +107,12 @@ INSERT INTO `website_contentcollection` (`contentobjectbase_ptr_id`, `is_ordered
 (157,	0),
 (160,	0);
 
+CREATE TABLE `website_contentcollectionlist` (
+  `contentcollection_ptr_id` int(11) NOT NULL,
+  PRIMARY KEY (`contentcollection_ptr_id`),
+  CONSTRAINT `website_contentcolle_contentcollection_pt_1d99cad3_fk_website_c` FOREIGN KEY (`contentcollection_ptr_id`) REFERENCES `website_contentcollection` (`contentobjectbase_ptr_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 TRUNCATE `website_contentcollectionlist`;
 INSERT INTO `website_contentcollectionlist` (`contentcollection_ptr_id`) VALUES
 (2),
@@ -100,6 +132,15 @@ INSERT INTO `website_contentcollectionlist` (`contentcollection_ptr_id`) VALUES
 (124),
 (138);
 
+CREATE TABLE `website_contentimage` (
+  `contentobjectbase_ptr_id` int(11) NOT NULL,
+  `image_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`contentobjectbase_ptr_id`),
+  KEY `website_contentimage_image_id_f72c32e8_fk_website_image_id` (`image_id`),
+  CONSTRAINT `website_contentimage_contentobjectbase_pt_97e8c9d3_fk_website_c` FOREIGN KEY (`contentobjectbase_ptr_id`) REFERENCES `website_contentobjectbase` (`id`),
+  CONSTRAINT `website_contentimage_image_id_f72c32e8_fk_website_image_id` FOREIGN KEY (`image_id`) REFERENCES `website_image` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 TRUNCATE `website_contentimage`;
 INSERT INTO `website_contentimage` (`contentobjectbase_ptr_id`, `image_id`) VALUES
 (15,	1),
@@ -109,7 +150,32 @@ INSERT INTO `website_contentimage` (`contentobjectbase_ptr_id`, `image_id`) VALU
 (152,	3),
 (159,	3);
 
+CREATE TABLE `website_contentmenu` (
+  `contentobjectbase_ptr_id` int(11) NOT NULL,
+  `menu_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`contentobjectbase_ptr_id`),
+  KEY `website_contentmenu_menu_id_effd319c_fk_website_menuitembase_id` (`menu_id`),
+  CONSTRAINT `website_contentmenu_contentobjectbase_pt_9aac09f6_fk_website_c` FOREIGN KEY (`contentobjectbase_ptr_id`) REFERENCES `website_contentobjectbase` (`id`),
+  CONSTRAINT `website_contentmenu_menu_id_effd319c_fk_website_menuitembase_id` FOREIGN KEY (`menu_id`) REFERENCES `website_menuitembase` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 TRUNCATE `website_contentmenu`;
+
+CREATE TABLE `website_contentobjectbase` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `db_type` varchar(5) NOT NULL,
+  `attributes` longtext NOT NULL,
+  `order` smallint(5) unsigned NOT NULL CHECK (`order` >= 0),
+  `containing_page_id` int(11) NOT NULL,
+  `collection_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `website_contentobjec_collection_id_21d33ecb_fk_website_c` (`collection_id`),
+  KEY `website_contentobjec_containing_page_id_db42bfaf_fk_website_b` (`containing_page_id`),
+  KEY `website_contentobjectbase_order_3652ff73` (`order`),
+  CONSTRAINT `website_contentobjec_collection_id_21d33ecb_fk_website_c` FOREIGN KEY (`collection_id`) REFERENCES `website_contentcollection` (`contentobjectbase_ptr_id`),
+  CONSTRAINT `website_contentobjec_containing_page_id_db42bfaf_fk_website_b` FOREIGN KEY (`containing_page_id`) REFERENCES `website_basepage` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 TRUNCATE `website_contentobjectbase`;
 INSERT INTO `website_contentobjectbase` (`id`, `name`, `db_type`, `attributes`, `order`, `containing_page_id`, `collection_id`) VALUES
@@ -277,7 +343,23 @@ INSERT INTO `website_contentobjectbase` (`id`, `name`, `db_type`, `attributes`, 
 (162,	'curr_year',	'text',	'{}',	0,	1,	160),
 (163,	'address',	'text',	'{}',	0,	1,	160);
 
+CREATE TABLE `website_contentpage` (
+  `contentobjectbase_ptr_id` int(11) NOT NULL,
+  `page_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`contentobjectbase_ptr_id`),
+  KEY `website_contentpage_page_id_cc196c67_fk_website_p` (`page_id`),
+  CONSTRAINT `website_contentpage_contentobjectbase_pt_2819b46e_fk_website_c` FOREIGN KEY (`contentobjectbase_ptr_id`) REFERENCES `website_contentobjectbase` (`id`),
+  CONSTRAINT `website_contentpage_page_id_cc196c67_fk_website_p` FOREIGN KEY (`page_id`) REFERENCES `website_page` (`basepage_ptr_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 TRUNCATE `website_contentpage`;
+
+CREATE TABLE `website_contenttext` (
+  `contentobjectbase_ptr_id` int(11) NOT NULL,
+  `text` longtext NOT NULL,
+  PRIMARY KEY (`contentobjectbase_ptr_id`),
+  CONSTRAINT `website_contenttext_contentobjectbase_pt_b1a03ffa_fk_website_c` FOREIGN KEY (`contentobjectbase_ptr_id`) REFERENCES `website_contentobjectbase` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 TRUNCATE `website_contenttext`;
 INSERT INTO `website_contenttext` (`contentobjectbase_ptr_id`, `text`) VALUES
@@ -381,6 +463,13 @@ INSERT INTO `website_contenttext` (`contentobjectbase_ptr_id`, `text`) VALUES
 (162,	'2021'),
 (163,	'Brinellvägen 89, 114 28 Stockholm, Sweden');
 
+CREATE TABLE `website_image` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `image` varchar(100) NOT NULL,
+  `alt` longtext NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 TRUNCATE `website_image`;
 INSERT INTO `website_image` (`id`, `image`, `alt`) VALUES
 (1,	'https://f.kth.se/wp-content/uploads/ERI_vertical_RGB.png',	'Ericsson-logo'),
@@ -391,7 +480,38 @@ INSERT INTO `website_image` (`id`, `image`, `alt`) VALUES
 (6,	'https://source.unsplash.com/collection/2533864/',	''),
 (7,	'https://source.unsplash.com/collection/71647489/',	'');
 
+CREATE TABLE `website_menuitembase` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `url` varchar(200) DEFAULT NULL,
+  `order` smallint(5) unsigned DEFAULT NULL CHECK (`order` >= 0),
+  `is_menu` tinyint(1) NOT NULL,
+  `menu_id` int(11) DEFAULT NULL,
+  `page_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `website_menuitembase_menu_id_name_53d72d5b_uniq` (`menu_id`,`name`),
+  KEY `website_menuitembase_page_id_c0ecdf07_fk_website_p` (`page_id`),
+  KEY `website_menuitembase_order_6e78524b` (`order`),
+  CONSTRAINT `website_menuitembase_menu_id_79babf54_fk_website_menuitembase_id` FOREIGN KEY (`menu_id`) REFERENCES `website_menuitembase` (`id`),
+  CONSTRAINT `website_menuitembase_page_id_c0ecdf07_fk_website_p` FOREIGN KEY (`page_id`) REFERENCES `website_page` (`basepage_ptr_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 TRUNCATE `website_menuitembase`;
+
+CREATE TABLE `website_news` (
+  `basepage_ptr_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `slug` varchar(50) DEFAULT NULL,
+  `author` varchar(255) NOT NULL,
+  `views` int(11) NOT NULL,
+  `image_id` int(11) DEFAULT NULL,
+  `preamble` longtext NOT NULL,
+  PRIMARY KEY (`basepage_ptr_id`),
+  UNIQUE KEY `slug` (`slug`),
+  KEY `website_news_image_id_15b14b5c_fk_website_image_id` (`image_id`),
+  CONSTRAINT `website_news_basepage_ptr_id_edc4eb08_fk_website_basepage_id` FOREIGN KEY (`basepage_ptr_id`) REFERENCES `website_basepage` (`id`),
+  CONSTRAINT `website_news_image_id_15b14b5c_fk_website_image_id` FOREIGN KEY (`image_id`) REFERENCES `website_image` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 TRUNCATE `website_news`;
 INSERT INTO `website_news` (`basepage_ptr_id`, `name`, `slug`, `author`, `views`, `image_id`, `preamble`) VALUES
@@ -400,7 +520,37 @@ INSERT INTO `website_news` (`basepage_ptr_id`, `name`, `slug`, `author`, `views`
 (9,	'En nyhet som ingen kommer att läsa',	'en-nyhet-som-ingen-kommer-att-lasa',	'',	0,	6,	'A diam sollicitudin tempor id ed iskall. Sit amet mattis vulputate enim arcu. Ullamcorper velit sed astonishing morbi tincidunt. Donec massa sapien fysiker et molestie al cocktail. Pulvinar mattis nunc sed blandit liber.'),
 (10,	'En nyhet som ännu färre kommer att läsa',	'en-nyhet-som-annu-farre-kommer-att-lasa',	'',	0,	7,	'Nulla pharetra diam sit amet nisl cash. Pharetra diam sit amet nisl semester adipiscing bibendum est ultricies. Egestas erat imperdiet sed vakuum. Nunc pulvinar sapien et ligula.');
 
+CREATE TABLE `website_newsdraft` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `page_type` varchar(255) NOT NULL,
+  `last_edited_at` date NOT NULL,
+  `content_en_id` int(11) DEFAULT NULL,
+  `content_sv_id` int(11) DEFAULT NULL,
+  `new_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `content_en_id` (`content_en_id`),
+  UNIQUE KEY `content_sv_id` (`content_sv_id`),
+  UNIQUE KEY `new_id` (`new_id`),
+  CONSTRAINT `website_newsdraft_content_en_id_b0819674_fk_website_c` FOREIGN KEY (`content_en_id`) REFERENCES `website_contentobjectbase` (`id`),
+  CONSTRAINT `website_newsdraft_content_sv_id_e623c9ae_fk_website_c` FOREIGN KEY (`content_sv_id`) REFERENCES `website_contentobjectbase` (`id`),
+  CONSTRAINT `website_newsdraft_new_id_2e11bb05_fk_website_n` FOREIGN KEY (`new_id`) REFERENCES `website_news` (`basepage_ptr_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 TRUNCATE `website_newsdraft`;
+
+CREATE TABLE `website_page` (
+  `basepage_ptr_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `slug` varchar(50) DEFAULT NULL,
+  `parent_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`basepage_ptr_id`),
+  UNIQUE KEY `website_page_slug_parent_id_35ce3b15_uniq` (`slug`,`parent_id`),
+  UNIQUE KEY `website_page_name_parent_id_4d55694f_uniq` (`name`,`parent_id`),
+  KEY `website_page_parent_id_eba5dfda_fk_website_page_basepage_ptr_id` (`parent_id`),
+  KEY `website_page_slug_3c8f5103` (`slug`),
+  CONSTRAINT `website_page_basepage_ptr_id_e14570de_fk_website_basepage_id` FOREIGN KEY (`basepage_ptr_id`) REFERENCES `website_basepage` (`id`),
+  CONSTRAINT `website_page_parent_id_eba5dfda_fk_website_page_basepage_ptr_id` FOREIGN KEY (`parent_id`) REFERENCES `website_page` (`basepage_ptr_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 TRUNCATE `website_page`;
 INSERT INTO `website_page` (`basepage_ptr_id`, `name`, `slug`, `parent_id`) VALUES
@@ -411,13 +561,61 @@ INSERT INTO `website_page` (`basepage_ptr_id`, `name`, `slug`, `parent_id`) VALU
 (5,	'Nämndsida - Fcom',	'fcom',	NULL),
 (6,	'Förtroendevalda',	'representatives',	NULL);
 
+CREATE TABLE `website_pagedraft` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `page_type` varchar(255) NOT NULL,
+  `last_edited_at` date NOT NULL,
+  `content_en_id` int(11) DEFAULT NULL,
+  `content_sv_id` int(11) DEFAULT NULL,
+  `page_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `content_en_id` (`content_en_id`),
+  UNIQUE KEY `content_sv_id` (`content_sv_id`),
+  UNIQUE KEY `page_id` (`page_id`),
+  CONSTRAINT `website_pagedraft_content_en_id_c973f96c_fk_website_c` FOREIGN KEY (`content_en_id`) REFERENCES `website_contentobjectbase` (`id`),
+  CONSTRAINT `website_pagedraft_content_sv_id_9c639aa0_fk_website_c` FOREIGN KEY (`content_sv_id`) REFERENCES `website_contentobjectbase` (`id`),
+  CONSTRAINT `website_pagedraft_page_id_561fcc9b_fk_website_p` FOREIGN KEY (`page_id`) REFERENCES `website_page` (`basepage_ptr_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 TRUNCATE `website_pagedraft`;
 
+CREATE TABLE `website_redirect` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `from_path` varchar(255) NOT NULL,
+  `url` varchar(200) DEFAULT NULL,
+  `page_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `from_path` (`from_path`),
+  KEY `website_redirect_page_id_edd740d3_fk_website_p` (`page_id`),
+  CONSTRAINT `website_redirect_page_id_edd740d3_fk_website_p` FOREIGN KEY (`page_id`) REFERENCES `website_page` (`basepage_ptr_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 TRUNCATE `website_redirect`;
+
+CREATE TABLE `website_sitemodel` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `root_url` varchar(200) NOT NULL,
+  `api_root_url` varchar(200) NOT NULL,
+  `root_page_id` int(11) NOT NULL,
+  `banner_content_en_id` int(11) DEFAULT NULL,
+  `banner_content_sv_id` int(11) DEFAULT NULL,
+  `footer_content_en_id` int(11) DEFAULT NULL,
+  `footer_content_sv_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `website_sitemodel_root_page_id_4faafa45_fk_website_p` (`root_page_id`),
+  KEY `website_sitemodel_banner_content_en_id_108f1c40_fk_website_c` (`banner_content_en_id`),
+  KEY `website_sitemodel_banner_content_sv_id_ce393fee_fk_website_c` (`banner_content_sv_id`),
+  KEY `website_sitemodel_footer_content_en_id_5a0e3153_fk_website_c` (`footer_content_en_id`),
+  KEY `website_sitemodel_footer_content_sv_id_bd6578c0_fk_website_c` (`footer_content_sv_id`),
+  CONSTRAINT `website_sitemodel_banner_content_en_id_108f1c40_fk_website_c` FOREIGN KEY (`banner_content_en_id`) REFERENCES `website_contentcollection` (`contentobjectbase_ptr_id`),
+  CONSTRAINT `website_sitemodel_banner_content_sv_id_ce393fee_fk_website_c` FOREIGN KEY (`banner_content_sv_id`) REFERENCES `website_contentcollection` (`contentobjectbase_ptr_id`),
+  CONSTRAINT `website_sitemodel_footer_content_en_id_5a0e3153_fk_website_c` FOREIGN KEY (`footer_content_en_id`) REFERENCES `website_contentcollection` (`contentobjectbase_ptr_id`),
+  CONSTRAINT `website_sitemodel_footer_content_sv_id_bd6578c0_fk_website_c` FOREIGN KEY (`footer_content_sv_id`) REFERENCES `website_contentcollection` (`contentobjectbase_ptr_id`),
+  CONSTRAINT `website_sitemodel_root_page_id_4faafa45_fk_website_p` FOREIGN KEY (`root_page_id`) REFERENCES `website_page` (`basepage_ptr_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 TRUNCATE `website_sitemodel`;
 INSERT INTO `website_sitemodel` (`id`, `root_url`, `api_root_url`, `root_page_id`, `banner_content_en_id`, `banner_content_sv_id`, `footer_content_en_id`, `footer_content_sv_id`) VALUES
 (1,	'https://f.kth.se',	'https://f.kth.se/api',	1,	157,	150,	160,	153);
 
-COMMIT;
--- 2021-07-16
+-- 2021-07-17

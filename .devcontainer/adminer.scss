@@ -1,0 +1,249 @@
+// Physics Chapter
+// New
+$f-orange: #FF642B;
+$f-orange-light: #FB9C74;
+$f-orange-lighter: #F7D48C;
+$f-porcelain: #f5f4f4;
+$f-navy: #132a3e;
+$f-gray-violet: #2f3b4b;
+$f-gray-navy: #3B5262;
+$f-gray-turqoise: #829899;
+// Secondary
+$f-blue: #1757A3;
+$f-sky: #58a7cb;
+$f-green: #197F2A;
+$f-onyx: #221F20;
+
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap');
+
+
+html, body {
+	background-color: $f-porcelain;
+	font-family: 'Libre Franklin' sans-serif;
+	height: 100%;
+	width: auto;
+}
+
+/*
+ * Basic tags
+ */
+a  {color: $f-orange;}
+a:visited {color: $f-blue;}
+a:link:hover, a:visited:hover {color: $f-orange;}
+
+// a on dark backgrounds
+table a, #menu a{color: $f-orange-light;}
+table a:visited, #menu a:visited {color: $f-orange;}
+table a:link:hover, table a:visited:hover, #menu a:link:hover, #menu a:visited:hover  {color: $f-orange;}
+
+h1, h2  {
+	color: $f-porcelain;
+	border-bottom: 1px solid $f-sky;
+	background: $f-onyx;
+}
+
+/*
+ * Layout
+ */
+
+ #breadcrumb, #menu, #lang {color: white; background-color: $f-onyx;border-bottom: 1px solid $f-sky;}
+ #lang {
+	 left: 0;
+	 padding: .3em 1em;
+	 width: calc(260px - 2em)}
+ #menu {
+	 width: 260px;
+	 position: fixed;
+	 top: 40px;
+	 overflow-y: auto;
+	 height: calc(100% - 50px);
+ }
+ #breadcrumb, #lang, .logout {
+	 line-height: 40px;
+	 padding: .3em 1em;
+	 position: fixed;
+	 top: 0;
+	 margin: 0;
+ }
+ #breadcrumb {
+    z-index: 100;
+	left: 260px;
+	width: 100%;
+	height: 40px;
+ }
+ #content {
+	 margin: calc(40px + 2em) 0 0 21em;
+	 height: calc(100% - 70px);
+	 height: max-content;
+	 padding-bottom: 2em;
+ }
+ 
+ #breadcrumb a {color: $f-sky;}
+ a#version {color:$f-gray-navy !important}
+ span.version, #h1 {color:$f-porcelain !important;}
+
+ #tables a.select {
+	display: inline-block;
+	position:	relative;
+	width: 1em;
+	height: 1em;
+	overflow: hidden;
+	white-space: nowrap;
+	padding: 0.1em 0.3em;
+	top: 0.2em;
+}
+#tables a.select:before {
+	content: '\f0ce';
+    font-family: FontAwesome;
+	display: block;
+}
+
+/*
+ * Forms
+ */
+
+input:not(.icon), select, label, pre.sqlarea {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 1.25;
+	border-radius: 0.25rem;
+	font-size: 1rem;
+	padding: 0.375rem 0.75rem;
+	color: $f-onyx;
+	background-color: $f-porcelain;
+	border: 1px solid $f-gray-navy;
+}
+
+button, input[type=submit] {
+	color: $f-porcelain;
+	text-align: center;
+	background-color: $f-navy;
+	border: 1px solid $f-navy;
+}
+
+td input.icon {background-color: $f-gray-navy;}
+
+label {
+	text-align: center;
+	border: 1px solid $f-gray-navy;
+}
+
+/*
+ * Tables
+ */
+
+table {
+	color: $f-gray-turqoise;
+}
+
+td, th {
+	border-right: none;
+	border-left: none;
+	border-bottom: 1px solid $f-onyx;
+	padding: .3em .5em;
+}
+
+// td {color: $f-gray-turqoise;}
+
+thead th, thead td {
+	background: $f-onyx;
+	padding: .3em .5em;
+	color: white;
+}
+thead th a, thead td a {color: $f-porcelain;}
+tbody th {color: $f-porcelain}
+
+tbody th, tbody tr.odd td {background-color: $f-navy;}
+tbody tr:not(.odd) td {background-color: $f-gray-violet;}
+tbody tr:hover td, tbody tr:hover th {background-color: $f-gray-navy !important;}
+
+/*
+ * Sidebar
+ */
+
+
+ul#tables, ul#logins, #logins a, #tables a, #tables span {
+	color: $f-gray-turqoise;
+	background-color: $f-navy;
+}
+#tables a:visited {color: $f-sky;}
+#tables a:link:hover, #tables a:visited:hover {color: $f-orange}
+#logins a:link:hover,  #logins a:visited:hover {color: $f-porcelain;}
+
+
+/*
+ * Elements
+ */
+
+sup {
+	padding-left: 3px;
+	color: $f-orange;
+}
+
+.footer {
+	border-top: 15px solid white;
+    border-image: linear-gradient(rgba(255,255,255,0),white) 100% 0;
+}
+
+.footer > div {
+	padding-top: 10px
+}
+
+/*
+ * Messages
+ */
+
+.message, .error, code.jush-sql {
+    display: block;
+	position: relative;
+	padding: .75rem 1.25rem;
+	margin-bottom: 1rem;
+	border: 1px solid transparent;
+	border-radius: .25rem;
+}
+
+code.jush-sql {
+	border-bottom: none;
+    margin-bottom: 0;
+	margin-right: 1cm;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	overflow-x: auto;
+}
+
+pre + .message, pre + .error {
+	margin-right: 1cm;
+	margin-top: 0;
+	border-top: none;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	margin-bottom: 2em;
+}
+
+.message, .error {
+	margin-bottom: 2em;
+}
+
+.message {
+	color: $f-porcelain;
+	background-color: $f-gray-navy;
+}
+
+.error {
+	color: $f-gray-violet;
+	background-color: $f-orange-light;
+}
+
+
+/*
+ * Code colors
+ */
+.jush {color: black;}
+.jush a {color: $f-blue;}
+.jush-bac {color: $f-orange;}
+.jush-sql {
+	color: black;
+	background-color: white;
+	border: none;
+}

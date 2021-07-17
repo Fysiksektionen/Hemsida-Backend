@@ -22,18 +22,18 @@ services:
         - MYSQL_ROOT_PASSWORD=password
         - MYSQL_DATABASE=hemsidan_db
         - TZ=Europe/Stockholm
+    volumes:
+        - ./initdb.sql:/config/initdb.d/001_initdb.sql:ro
     expose:
         - 3306
     networks:
         - backend-net
 
-# Uncomment the following rows if you want to use adminer.
-#   adminer:
-#     image: adminer:standalone
-#     ports:
-#         - 8083:8080
-#     environment:
-#         # Try also: rmsoft, flat, nette, pappu687, see https://www.adminer.org for all themes.
-#         - ADMINER_DESIGN=rmsoft
-#     networks:
-#         - backend-net
+  adminer:
+    image: dockette/adminer:mysql
+    ports:
+        - 8083:80
+    volumes:
+        - ./adminer.css:/srv/adminer.css:ro
+    networks:
+        - backend-net

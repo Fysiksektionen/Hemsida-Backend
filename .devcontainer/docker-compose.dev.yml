@@ -32,13 +32,11 @@ services:
     networks:
         - backend-net
 
-# Uncomment the following rows if you want to use adminer.
   adminer:
-    image: adminer:standalone
-    ports:
-        - 8083:8080
-    environment:
-        # Try also: rmsoft, flat, nette, pappu687, see https://www.adminer.org for all themes.
-        - ADMINER_DESIGN=rmsoft
-    networks:
-        - backend-net
+        image: dockette/adminer:mysql
+        ports:
+            - 8083:80
+        volumes:
+            - ./adminer.css:/srv/adminer.css:ro
+        networks:
+            - backend-net

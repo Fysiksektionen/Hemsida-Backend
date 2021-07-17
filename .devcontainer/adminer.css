@@ -1,0 +1,291 @@
+@charset "UTF-8";
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap");
+html, body {
+  background-color: #f5f4f4;
+  font-family: "Libre Franklin" sans-serif;
+  height: 100%;
+  width: auto;
+}
+
+/*
+ * Basic tags
+ */
+a {
+  color: #FF642B;
+}
+
+a:visited {
+  color: #1757A3;
+}
+
+a:link:hover, a:visited:hover {
+  color: #FF642B;
+}
+
+table a, #menu a {
+  color: #FB9C74;
+}
+
+table a:visited, #menu a:visited {
+  color: #FF642B;
+}
+
+table a:link:hover, table a:visited:hover, #menu a:link:hover, #menu a:visited:hover {
+  color: #FF642B;
+}
+
+h1, h2 {
+  color: #f5f4f4;
+  border-bottom: 1px solid #58a7cb;
+  background: #221F20;
+}
+
+/*
+ * Layout
+ */
+#breadcrumb, #menu, #lang {
+  color: white;
+  background-color: #221F20;
+  border-bottom: 1px solid #58a7cb;
+}
+
+#lang {
+  left: 0;
+  padding: 0.3em 1em;
+  width: calc(260px - 2em);
+}
+
+#menu {
+  width: 260px;
+  position: fixed;
+  top: 40px;
+  overflow-y: auto;
+  height: calc(100% - 50px);
+}
+
+#breadcrumb, #lang, .logout {
+  line-height: 40px;
+  padding: 0.3em 1em;
+  position: fixed;
+  top: 0;
+  margin: 0;
+}
+
+#breadcrumb {
+  z-index: 100;
+  left: 260px;
+  width: 100%;
+  height: 40px;
+}
+
+#content {
+  margin: calc(40px + 2em) 0 0 21em;
+  height: calc(100% - 70px);
+  height: max-content;
+  padding-bottom: 2em;
+}
+
+#breadcrumb a {
+  color: #58a7cb;
+}
+
+a#version {
+  color: #3B5262 !important;
+}
+
+span.version, #h1 {
+  color: #f5f4f4 !important;
+}
+
+#tables a.select {
+  display: inline-block;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0.1em 0.3em;
+  top: 0.2em;
+}
+
+#tables a.select:before {
+  content: "";
+  font-family: FontAwesome;
+  display: block;
+}
+
+/*
+ * Forms
+ */
+input:not(.icon), select, label, pre.sqlarea {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.25;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  padding: 0.375rem 0.75rem;
+  color: #221F20;
+  background-color: #f5f4f4;
+  border: 1px solid #3B5262;
+}
+
+button, input[type=submit] {
+  color: #f5f4f4;
+  text-align: center;
+  background-color: #132a3e;
+  border: 1px solid #132a3e;
+}
+
+td input.icon {
+  background-color: #3B5262;
+}
+
+label {
+  text-align: center;
+  border: 1px solid #3B5262;
+}
+
+/*
+ * Tables
+ */
+table {
+  color: #829899;
+}
+
+td, th {
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid #221F20;
+  padding: 0.3em 0.5em;
+}
+
+thead th, thead td {
+  background: #221F20;
+  padding: 0.3em 0.5em;
+  color: white;
+}
+
+thead th a, thead td a {
+  color: #f5f4f4;
+}
+
+tbody th {
+  color: #f5f4f4;
+}
+
+tbody th, tbody tr.odd td {
+  background-color: #132a3e;
+}
+
+tbody tr:not(.odd) td {
+  background-color: #2f3b4b;
+}
+
+tbody tr:hover td, tbody tr:hover th {
+  background-color: #3B5262 !important;
+}
+
+/*
+ * Sidebar
+ */
+ul#tables, ul#logins, #logins a, #tables a, #tables span {
+  color: #829899;
+  background-color: #132a3e;
+}
+
+#tables a:visited {
+  color: #58a7cb;
+}
+
+#tables a:link:hover, #tables a:visited:hover {
+  color: #FF642B;
+}
+
+#logins a:link:hover, #logins a:visited:hover {
+  color: #f5f4f4;
+}
+
+/*
+ * Elements
+ */
+sup {
+  padding-left: 3px;
+  color: #FF642B;
+}
+
+.footer {
+  border-top: 15px solid white;
+  border-image: linear-gradient(rgba(255, 255, 255, 0), white) 100% 0;
+}
+
+.footer > div {
+  padding-top: 10px;
+}
+
+/*
+ * Messages
+ */
+.message, .error, code.jush-sql {
+  display: block;
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+code.jush-sql {
+  border-bottom: none;
+  margin-bottom: 0;
+  margin-right: 1cm;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  overflow-x: auto;
+}
+
+pre + .message, pre + .error {
+  margin-right: 1cm;
+  margin-top: 0;
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-bottom: 2em;
+}
+
+.message, .error {
+  margin-bottom: 2em;
+}
+
+.message {
+  color: #f5f4f4;
+  background-color: #3B5262;
+}
+
+.error {
+  color: #2f3b4b;
+  background-color: #FB9C74;
+}
+
+/*
+ * Code colors
+ */
+.jush {
+  color: black;
+}
+
+.jush a {
+  color: #1757A3;
+}
+
+.jush-bac {
+  color: #FF642B;
+}
+
+.jush-sql {
+  color: black;
+  background-color: white;
+  border: none;
+}
+
+/*# sourceMappingURL=adminer.css.map */

@@ -1,5 +1,7 @@
 from .base import *
 
+print("[\033[93mInfo\033[00m] Project is running in development mode.")
+
 DEBUG = True
 CSRF_COOKIE_HTTPONLY = True
 CSRF_COOKIE_SECURE = False
@@ -7,11 +9,24 @@ SESSION_COOKIE_SECURE = False
 
 ALLOWED_HOSTS = ['*']
 INSTALLED_APPS += [
-    'debug_toolbar'
+    'debug_toolbar',
+    'corsheaders',
 ]
 
+
 MIDDLEWARE += [
-    'debug_toolbar.middleware.DebugToolbarMiddleware'
+    'debug_toolbar.middleware.DebugToolbarMiddleware', 'corsheaders.middleware.CorsMiddleware'
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:80",
+    "http://localhost:3000",
+    "http://localhost:3001",
+    "http://localhost:8080",
+    "http://127.0.0.1:80",
+    "http://127.0.0.1:3000",
+    "http://127.0.0.1:3001",
+    "http://127.0.0.1:8080",
 ]
 
 INTERNAL_IPS = [
