@@ -28,16 +28,15 @@ CREATE TABLE `website_basepage` (
 
 TRUNCATE `website_basepage`;
 INSERT INTO `website_basepage` (`id`, `url`, `page_type`, `published`, `first_published_at`, `publish_time`, `unpublish_time`, `last_edited_at`, `content_en_id`, `content_sv_id`) VALUES
-(1,	'',	'',	0,	NULL,	NULL,	NULL,	'2021-07-16 20:48:12.250473',	NULL,	NULL),
-(2,	'https://f.kth.se',	'frontpage',	1,	NULL,	NULL,	NULL,	'2021-07-16 20:49:22.342700',	16,	1),
-(3,	'https://f.kth.se/styret',	'styret',	1,	NULL,	NULL,	NULL,	'2021-07-16 20:49:31.032677',	32,	31),
-(4,	'https://f.kth.se/nyheter',	'news_feed',	1,	NULL,	NULL,	NULL,	'2021-07-16 20:49:35.800987',	34,	33),
-(5,	'https://f.kth.se/fcom',	'namnd',	1,	NULL,	NULL,	NULL,	'2021-07-16 20:49:40.267227',	43,	35),
-(6,	'https://f.kth.se/representatives',	'representatives',	1,	NULL,	NULL,	NULL,	'2021-07-16 20:49:45.797895',	99,	48),
-(7,	'https://f.kth.se/news/1',	'news',	0,	NULL,	NULL,	NULL,	'2021-07-16 20:51:20.690205',	NULL,	NULL),
-(8,	'https://f.kth.se/news/2',	'news',	0,	NULL,	NULL,	NULL,	'2021-07-16 20:51:28.662620',	NULL,	NULL),
-(9,	'https://f.kth.se/news/3',	'news',	0,	NULL,	NULL,	NULL,	'2021-07-16 20:51:34.221778',	NULL,	NULL),
-(10,	'https://f.kth.se/news/4',	'news',	0,	NULL,	NULL,	NULL,	'2021-07-16 20:51:38.419288',	NULL,	NULL);
+(1,	'https://f.kth.se',	'frontpage',	1,	NULL,	NULL,	NULL,	'2021-07-16 20:49:22.342700',	16,	1),
+(2,	'https://f.kth.se/styret',	'styret',	1,	NULL,	NULL,	NULL,	'2021-07-16 20:49:31.032677',	32,	31),
+(3,	'https://f.kth.se/nyheter',	'news_feed',	1,	NULL,	NULL,	NULL,	'2021-07-16 20:49:35.800987',	34,	33),
+(4,	'https://f.kth.se/fcom',	'namnd',	1,	NULL,	NULL,	NULL,	'2021-07-16 20:49:40.267227',	43,	35),
+(5,	'https://f.kth.se/representatives',	'representatives',	1,	NULL,	NULL,	NULL,	'2021-07-16 20:49:45.797895',	99,	48),
+(6,	'https://f.kth.se/news/1',	'news',	0,	NULL,	NULL,	NULL,	'2021-07-16 20:51:20.690205',	NULL,	NULL),
+(7,	'https://f.kth.se/news/2',	'news',	0,	NULL,	NULL,	NULL,	'2021-07-16 20:51:28.662620',	NULL,	NULL),
+(8,	'https://f.kth.se/news/3',	'news',	0,	NULL,	NULL,	NULL,	'2021-07-16 20:51:34.221778',	NULL,	NULL),
+(9,	'https://f.kth.se/news/4',	'news',	0,	NULL,	NULL,	NULL,	'2021-07-16 20:51:38.419288',	NULL,	NULL);
 
 CREATE TABLE `website_contentcollection` (
   `contentobjectbase_ptr_id` int(11) NOT NULL,

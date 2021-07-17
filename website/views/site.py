@@ -9,7 +9,6 @@ from rest_framework.fields import empty
 class SiteSerializer(PageSerializer):
     """Serializer for rendering Site."""
 
-
     class Meta:
         model = SiteModel
         fields = ['root_url', 'api_root_url', 'root_page', 'banner_content_sv', 'footer_content_sv', 'banner_content_en', 'footer_content_en']
@@ -22,6 +21,11 @@ class SiteSerializer(PageSerializer):
 
     CONTENT_TREE_FIELDS = ['banner_content_sv', 'footer_content_sv', 'banner_content_en', 'footer_content_en']
 
+    banner_content_sv = serializers.SerializerMethodField()
+    footer_content_sv = serializers.SerializerMethodField()
+    banner_content_en = serializers.SerializerMethodField()
+    footer_content_en = serializers.SerializerMethodField()
+
     # Adapted from FullPageSerializer
     def __init__(self, instance=None, data=empty,**kwargs):
         if data is not empty:
@@ -33,8 +37,9 @@ class SiteSerializer(PageSerializer):
 
         # TODO: get_content_object_trees is kinda slow, and we could probablt be faster by only calling it once for all CONTENT_TREE_FIELDS.
         for field in self.CONTENT_TREE_FIELDS:
-            setattr(self, field, serializers.SerializerMethodField())
-            setattr(self, "get_"+field, lambda obj: serialize_item(get_content_object_trees([getattr(obj, field)])[0], self.context) if getattr(obj, field) else None)
+            setattr(self, "get_"+field,
+                lambda obj: serialize_item(get_content_object_trees([getattr(obj, field)])[0], self.context)
+                    if getattr(obj, field) else None)
         
         super().__init__(instance=instance,data=data,**kwargs)
 
