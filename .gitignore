@@ -3,7 +3,7 @@ project_settings/local.py
 
 .idea/
 /venv/
-public/mediafiles/*
+public/mediafiles/uploads/*
 public/staticfiles/*
 cache/*
 !*/.gitkeep

@@ -1,3 +1,4 @@
+from project_settings.settings.base import DEBUG, MEDIA_URL, MEDIA_ROOT
 from django.urls import path
 from rest_framework.routers import DefaultRouter
 from website.views.general import PathResolveView
@@ -7,6 +8,7 @@ from website.views.redirects import RedirectViewSet
 from website.views.site import SiteView
 from website.views.news import NewsItemView, NewsViewSet
 from website.views.image import ImageView, ImagesView
+from django.conf.urls.static import static
 
 app_name = 'website'
 
@@ -27,3 +29,6 @@ urlpatterns = [
     path('images/', ImagesView.as_view(), name='images'),
     path('images/<int:pk>', ImageView.as_view(), name='images')
 ]
+
+if DEBUG:
+    urlpatterns += static(MEDIA_URL, document_root=MEDIA_ROOT)

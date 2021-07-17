@@ -471,13 +471,13 @@ CREATE TABLE `website_image` (
 
 TRUNCATE `website_image`;
 INSERT INTO `website_image` (`id`, `image`, `alt`) VALUES
-(1,	'https://f.kth.se/wp-content/uploads/ERI_vertical_RGB.png',	'Ericsson-logo'),
-(2,	'https://f.kth.se/wp-content/uploads/Fcom-ikoner.png',	'Fcom-ikoner'),
-(3,	'https://drive.google.com/uc?id=1BiZqzsLrUXnUQjagw_uqlXpKFUr_lJvZ&export=download',	'Fysiksektionens logga'),
-(4,	'https://source.unsplash.com/collection/2087590/',	''),
-(5,	'https://source.unsplash.com/collection/8647462/',	''),
-(6,	'https://source.unsplash.com/collection/2533864/',	''),
-(7,	'https://source.unsplash.com/collection/71647489/',	'');
+(1,	'mock/ERI_vertical_RGB.png',	'Ericsson-logo'),
+(2,	'mock/Fcom-ikoner.png',	'Fcom-ikoner'),
+(3,	'mock/Fysiksektionen_logo.svg',	'Fysiksektionens logga'),
+(4,	'mock/news_placeholder.jpg',	'Fadderiet löööves you'),
+(5,	'mock/news_placeholder2.jpg',	'Sjungande fysiker'),
+(6,	'mock/news_placeholder3.jpg',	''),
+(7,	'mock/news_placeholder4.jpg',	'');
 
 CREATE TABLE `website_menuitembase` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -543,8 +543,8 @@ CREATE TABLE `website_page` (
   `slug` varchar(50) DEFAULT NULL,
   `parent_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`basepage_ptr_id`),
-  UNIQUE KEY `website_page_slug_parent_id_35ce3b15_uniq` (`slug`,`parent_id`),
   UNIQUE KEY `website_page_name_parent_id_4d55694f_uniq` (`name`,`parent_id`),
+  UNIQUE KEY `website_page_slug_parent_id_35ce3b15_uniq` (`slug`,`parent_id`),
   KEY `website_page_parent_id_eba5dfda_fk_website_page_basepage_ptr_id` (`parent_id`),
   KEY `website_page_slug_3c8f5103` (`slug`),
   CONSTRAINT `website_page_basepage_ptr_id_e14570de_fk_website_basepage_id` FOREIGN KEY (`basepage_ptr_id`) REFERENCES `website_basepage` (`id`),
@@ -617,4 +617,4 @@ TRUNCATE `website_sitemodel`;
 INSERT INTO `website_sitemodel` (`id`, `root_url`, `api_root_url`, `root_page_id`, `banner_content_en_id`, `banner_content_sv_id`, `footer_content_en_id`, `footer_content_sv_id`) VALUES
 (1,	'https://f.kth.se',	'https://f.kth.se/api',	1,	157,	150,	160,	153);
 
--- 2021-07-17
+-- 2021-07-17 16:59:27

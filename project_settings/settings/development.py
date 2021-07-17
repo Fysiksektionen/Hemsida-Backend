@@ -1,4 +1,5 @@
 from .base import *
+import os
 
 print("[\033[93mInfo\033[00m] Project is running in development mode.")
 
@@ -7,12 +8,12 @@ CSRF_COOKIE_HTTPONLY = True
 CSRF_COOKIE_SECURE = False
 SESSION_COOKIE_SECURE = False
 
+
 ALLOWED_HOSTS = ['*']
 INSTALLED_APPS += [
     'debug_toolbar',
     'corsheaders',
 ]
-
 
 MIDDLEWARE += [
     'debug_toolbar.middleware.DebugToolbarMiddleware', 'corsheaders.middleware.CorsMiddleware'
