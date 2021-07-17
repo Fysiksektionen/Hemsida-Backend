@@ -2,6 +2,8 @@
 [![Django Tests](https://github.com/Fysiksektionen/Hemsida-Backend/actions/workflows/test-django-in-docker.yml/badge.svg?branch=frontend-connect-test)](https://github.com/Fysiksektionen/Hemsida-Backend/actions/workflows/test-django-in-docker.yml)  
 Server-sidan av Fysiksektionens hemsida är byggd i python med web frameworket Django. Vi arbeter med Django och Django REST Framework för att bygga ett API för det som fontend i form av React, React Native eller annan frontend ska kunna kommunicera med.
 
+För mer information om denna branch, se [denna fil](README2.md).
+
 ## Ladda ner och kör servern lokalt
 För att ladda ner och köra servern lokalt behöver du sätta upp en del grejer. Följ stegen nedan för den miljö du programmerar i. Ett tips är att använda IDEn PyCharm. Vi får betal-varianten från KTH och den är väldigt väl anpassad för att jobba med Django. Nedan följer hur du sätter upp servern med och utan PyCharm. Om du inte ska redigera så mycket utan endast vill kunna starta servern kanske det är mer värt att inte köra på PyCharm.
 
