@@ -14,6 +14,7 @@ from website.models.pages import Page
 from website.models.menus import Menu
 from website.models.media import Image
 from django.utils.translation import gettext_lazy as _
+import ast
 
 
 
@@ -66,6 +67,14 @@ class COBaseSerializer(DBObjectSerializer):
     class Meta:
         model = ContentObjectBase
         fields = ['db_type', 'attributes']
+        
+    # Frontend compatibility
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        # TODO: Check how this compares to json.loads().
+        #       (we use this, since attributes may be encoded with single quotes, not allowed by json.loads())
+        representation['attributes'] = ast.literal_eval(representation['attributes'])
+        return representation
 
 
 class COImageSerializer(DBObjectSerializer):
