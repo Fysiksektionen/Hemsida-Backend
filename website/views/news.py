@@ -1,7 +1,7 @@
 from rest_framework.fields import empty
 from website.views.pages import COImageSerializer, ContentImageSerializer, PageSerializer, serialize_item
 from website.views.image import ImageSerializer
-from rest_framework import generics, viewsets, mixins
+from rest_framework import generics, viewsets, mixins, serializers
 from utils.serializers import DBObjectSerializer
 from website.models.news import News
 
@@ -20,6 +20,12 @@ class NewsSerializer(PageSerializer):
                 'fields': ['page_type', 'content_sv', 'content_en']
             }
         }
+
+    # Frontend compatibility
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        representation['image']['href'] = representation['image']['image']
+        return representation
 
 # TODO: The detail_url points at pages, when it should probably point at /api/news/{id}
 class NewsViewSet(generics.ListCreateAPIView):
