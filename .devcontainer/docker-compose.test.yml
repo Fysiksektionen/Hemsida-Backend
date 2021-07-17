@@ -1,0 +1,30 @@
+version: '2.4'
+
+networks:
+    backend-net:
+
+services:
+  backend: 
+    build:
+        context: ..
+        dockerfile: .devcontainer/Dockerfile.Run
+    image: fsh:backend
+    environment: 
+        - ACTION=TEST
+    networks:
+        - backend-net
+
+  mariadb: 
+    image: linuxserver/mariadb:alpine
+    environment:
+        - MYSQL_USER=fdev
+        - MYSQL_PASSWORD=password
+        - MYSQL_ROOT_PASSWORD=password
+        - MYSQL_DATABASE=hemsidan_db
+        - TZ=Europe/Stockholm
+#    volumes:
+#        - ./initdb.sql:/config/initdb.d/001_initdb.sql:ro
+    expose:
+        - 3306
+    networks:
+        - backend-net

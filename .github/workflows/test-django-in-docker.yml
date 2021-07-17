@@ -1,0 +1,32 @@
+name: Django Tests
+
+on:
+  push:
+    branches: [ frontend-connect-test ]
+  pull_request:
+    branches: [ frontend-connect-test ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Build
+      run: docker-compose -f docker-compose.test.yml build
+      working-directory: ./.devcontainer/
+  
+  # TODO: Somehow transfer the docker image between the jobs.
+  tests:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Pull other images
+      run: docker-compose -f docker-compose.test.yml pull &
+      working-directory: ./.devcontainer/
+
+    - name: Run tests
+      run: docker-compose -f docker-compose.test.yml up --exit-code-from backend
+      working-directory: ./.devcontainer/

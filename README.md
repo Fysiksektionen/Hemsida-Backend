@@ -1,5 +1,5 @@
 # Hemsidan - Server
-
+[![Django Tests](https://github.com/Fysiksektionen/Hemsida-Backend/actions/workflows/test-django-in-docker.yml/badge.svg?branch=frontend-connect-test)](https://github.com/Fysiksektionen/Hemsida-Backend/actions/workflows/test-django-in-docker.yml)  
 Server-sidan av Fysiksektionens hemsida är byggd i python med web frameworket Django. Vi arbeter med Django och Django REST Framework för att bygga ett API för det som fontend i form av React, React Native eller annan frontend ska kunna kommunicera med.
 
 ## Ladda ner och kör servern lokalt
