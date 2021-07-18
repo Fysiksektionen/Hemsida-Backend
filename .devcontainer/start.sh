@@ -21,5 +21,5 @@ else
     # Insecure allows for static file hosting.
     # TODO: disable this when running inside a devcontainer.
     #python3 scripts/manage.py runserver $(hostname -i):8000 --insecure
-    python3 scripts/manage.py runserver 0.0.0.0:8080 --insecure
+    python3 scripts/manage.py runserver 0.0.0.0:8000 --insecure
 fi

@@ -4,17 +4,17 @@ networks:
     backend-net:
 
 services:
-  backend: 
+  backend:
     build:
         context: ..
         dockerfile: .devcontainer/Dockerfile.Run
     image: fsh:backend
     ports:
-        - 8080:8080/tcp
+        - 8000:8000/tcp
     networks:
         - backend-net
 
-  mariadb: 
+  mariadb:
     image: linuxserver/mariadb:alpine
     environment:
         - MYSQL_USER=fdev
@@ -32,7 +32,7 @@ services:
   adminer:
     image: dockette/adminer:mysql
     ports:
-        - 8083:80
+        - 8003:80
     volumes:
         - ./adminer.css:/srv/adminer.css:ro
     networks:
