@@ -15,18 +15,22 @@ INSTALLED_APPS += [
     'corsheaders',
 ]
 
-MIDDLEWARE += [
-    'debug_toolbar.middleware.DebugToolbarMiddleware', 'corsheaders.middleware.CorsMiddleware'
-]
+MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware']
+# CORS middleware needs to be first, since other middleware may return (i.e. a redirect) before CORS headers are added.
+MIDDLEWARE = ['corsheaders.middleware.CorsMiddleware'] + MIDDLEWARE
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:80",
     "http://localhost:3000",
     "http://localhost:3001",
+    "http://localhost:3002",
+    "http://localhost:3003",
     "http://localhost:8080",
     "http://127.0.0.1:80",
     "http://127.0.0.1:3000",
     "http://127.0.0.1:3001",
+    "http://127.0.0.1:3002",
+    "http://127.0.0.1:3003",
     "http://127.0.0.1:8080",
 ]
 
